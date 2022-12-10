@@ -397,7 +397,6 @@ class _ApplicationDetailState extends State<ApplicationDetail> {
                       height: 10,
                       color: Colors.black54,
                     ),
-                    //to do:error
                     isApproved ?? _isAdmin
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -421,7 +420,8 @@ class _ApplicationDetailState extends State<ApplicationDetail> {
                                 style: TextStyle(color: Colors.red),
                               )
                             ],
-                          )
+                          ),
+                    Text("")
                   ],
                 ),
               ),
