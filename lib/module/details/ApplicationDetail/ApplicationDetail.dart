@@ -397,7 +397,7 @@ class _ApplicationDetailState extends State<ApplicationDetail> {
                       height: 10,
                       color: Colors.black54,
                     ),
-                    _isAdmin
+                    isApproved || _isAdmin
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
