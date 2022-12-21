@@ -72,10 +72,17 @@ class AuthService {
           .updateUserData(name, contact, address);
       setUserData(email, name, contact, address);
       return _userFromFirebaseUser(user);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'email-already-in-use') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            backgroundColor: Colors.red,
+            content: Text('Email already exist try ')));
+      }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          backgroundColor: Colors.red,
-          content: Text('Email already exist try ')));
+      print(e.toString());
+      // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      //     backgroundColor: Colors.red,
+      //     content: Text('Email already exist try ')));
 
       // print(e.toString());
 
